@@ -1,6 +1,6 @@
 import requests
 
-# Kies opdracht: 'optel' of 'tekst_omkeren'
+# Kies opdracht: 'optel' of 'tekst_omkeren' Dit is alleen een voorbeeld
 opdracht = 'write_database'  # of 'tekst_omkeren'
 
 if opdracht == 'optel':
@@ -21,9 +21,9 @@ elif opdracht == 'read_database':
 elif opdracht == 'write_database':
     json_data = {
         'opdracht': 'write_database',
-        'payload': {'tabel': 'boeken_tabel','schrijver':'jannetje geelgat','boek':'jannetjes nieuwe boek'}
+        'payload': {'tabel': 'boeken_tabel','schrijver':'Jannetje Geelgat','boek':'Jannetjes nieuwe boek'}
     }
-
+#
 response = requests.post('http://127.0.0.1:5000/verwerk', json=json_data)
 
 if response.ok:
