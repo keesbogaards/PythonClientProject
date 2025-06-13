@@ -3,17 +3,8 @@ import requests
 # Kies opdracht: 'optel' of 'tekst_omkeren' Dit is alleen een voorbeeld
 opdracht = 'write_database'  # of 'tekst_omkeren'
 
-if opdracht == 'optel':
-    json_data = {
-        'opdracht': 'optel',
-        'payload': {'a': 5, 'b': 7}
-    }
-elif opdracht == 'tekst_omkeren':
-    json_data = {
-        'opdracht': 'tekst_omkeren',
-        'payload': {'tekst': 'Hallo wereld'}
-    }
-elif opdracht == 'read_database':
+
+if  opdracht == 'read_database':
     json_data = {
         'opdracht': 'read_database',
         'payload': {'tabel': 'boeken'}
@@ -24,7 +15,7 @@ elif opdracht == 'write_database':
         'payload': {'tabel': 'boeken_tabel','schrijver':'Jannetje Geelgat','boek':'Jannetjes nieuwe boek'}
     }
 #
-response = requests.post('http://127.0.0.1:5000/verwerk', json=json_data)
+response = requests.post('http://127.0.0.1:5000/Boeken', json=json_data)
 
 if response.ok:
     print('Resultaat:', response.json()['resultaat'])
