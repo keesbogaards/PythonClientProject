@@ -1,5 +1,7 @@
 import requests
 
+
+
 # Kies opdracht: 'optel' of 'tekst_omkeren' Dit is alleen een voorbeeld
 opdracht = 'write_database'  # of 'tekst_omkeren'
 
@@ -14,10 +16,19 @@ elif opdracht == 'write_database':
         'opdracht': 'write_database',
         'payload': {'tabel': 'boeken_tabel','schrijver':'Jannetje Geelgat','boek':'Jannetjes nieuwe boek'}
     }
+elif opdracht == 'read':
+    json_data = {
+        'opdracht': 'read',
+        'payload': {'tabel': 'boeken_tabel', 'schrijver': 'Jannetje Geelgat', 'boek': 'Jannetjes nieuwe boek'}
+    }
 #
 response = requests.post('http://127.0.0.1:5000/Boeken', json=json_data)
-
 if response.ok:
-    print('Resultaat:', response.json()['resultaat'])
+    antwoord=response.json()
+    schrijver= antwoord.get('schrijver')
+    boek = antwoord.get('boek')
+    resultaat = schrijver+": "+boek
+    print('Resultaat:', resultaat)
+
 else:
     print('Fout:', response.json())
