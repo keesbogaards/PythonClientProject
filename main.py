@@ -2,7 +2,7 @@ import requests
 
 
 
-
+#
 opdracht = 'write_database'  # of 'tekst_omkeren'
 
 
