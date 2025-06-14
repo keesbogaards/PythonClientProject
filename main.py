@@ -2,7 +2,7 @@ import requests
 
 
 
-# Kies opdracht: 'optel' of 'tekst_omkeren' Dit is alleen een voorbeeld
+
 opdracht = 'write_database'  # of 'tekst_omkeren'
 
 
